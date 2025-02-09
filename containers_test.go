@@ -9,7 +9,6 @@ import (
 	"path"
 	"testing"
 
-	"github.com/docker/docker/api/types/container"
 	"github.com/docker/go-connections/nat"
 	"github.com/stretchr/testify/require"
 	"github.com/testcontainers/testcontainers-go"
@@ -23,12 +22,7 @@ var (
 	defaultPort     = 80
 )
 
-func hcf(*container.HostConfig) {
-	return
-}
-
 func createUbuntuContainer() (func() error, error) {
-
 	ctx := context.Background()
 	pwd, err := os.Getwd()
 	if err != nil {
